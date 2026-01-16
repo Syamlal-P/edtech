@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | AI Education Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Login</h1>
+        <p>Access your personalized learning dashboard</p>
+    </header>
+
+    <!-- LOGIN FORM -->
+    <div class="container">
+        <form id="loginForm" method="POST">
+
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your name" required>
+
+            <label for="role">Login as</label>
+            <select id="role" name="role" required>
+                <option value="">-- Select Role --</option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="expert">Industry Expert</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <br>
+        <p>
+            New user?
+            <a href="/register">Register here</a>
+        </p>
+    </div>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

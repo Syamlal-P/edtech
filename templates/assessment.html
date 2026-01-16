@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assessment | AI Education Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Skill Assessment</h1>
+        <p>Answer a few questions to discover your skill gaps</p>
+    </header>
+
+    <div class="container">
+        <!-- POST to /assessment for scoring -->
+        <form id="assessmentForm" method="POST" action="/assessment">
+
+            <!-- Question 1 -->
+            <label>1. What is Python mainly used for?</label>
+            <select name="q1" required>
+                <option value="">--Select--</option>
+                <option value="a">Web Development</option>
+                <option value="b">Data Science</option>
+                <option value="c">Both</option>
+                <option value="d">Gaming Only</option>
+            </select>
+
+            <!-- Question 2 -->
+            <label>2. Which data structure is best for LIFO operations?</label>
+            <select name="q2" required>
+                <option value="">--Select--</option>
+                <option value="a">Queue</option>
+                <option value="b">Stack</option>
+                <option value="c">Array</option>
+                <option value="d">LinkedList</option>
+            </select>
+
+            <!-- Question 3 -->
+            <label>3. What is AI used for?</label>
+            <select name="q3" required>
+                <option value="">--Select--</option>
+                <option value="a">Automation</option>
+                <option value="b">Decision Support</option>
+                <option value="c">Prediction</option>
+                <option value="d">All of the above</option>
+            </select>
+
+            <button type="submit">Submit Assessment</button>
+        </form>
+
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

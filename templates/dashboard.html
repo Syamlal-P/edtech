@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | AI Education Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>{{ role }} Dashboard</h1>
+        <p>Personalized learning & analytics</p>
+    </header>
+
+    <div class="container">
+
+        {% if role == "Student" %}
+            <div class="card">
+                <h3>Skill Assessment</h3>
+                <p>Evaluate your current skill level</p>
+                <button onclick="startAssessment()">Start Assessment</button>
+            </div>
+
+            <div class="card">
+                <h3>Personalized Roadmap</h3>
+                <p>AI-generated learning path based on your skills</p>
+                <button onclick="viewRoadmap()">View Roadmap</button>
+            </div>
+
+        {% elif role == "Teacher" %}
+            <div class="card">
+                <h3>Student Analytics</h3>
+                <p>Track learning outcomes and skill gaps</p>
+                <button onclick="viewAnalytics()">View Analytics</button>
+            </div>
+
+        {% elif role == "Expert" %}
+            <div class="card">
+                <h3>Course Contribution</h3>
+                <p>Upload industry-aligned learning content</p>
+                <button onclick="viewAnalytics()">View Analytics</button>
+            </div>
+        {% endif %}
+
+        <br>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

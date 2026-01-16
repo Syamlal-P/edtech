@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roadmap | AI Education Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Personalized Learning Roadmap</h1>
+        <p>Based on your assessment, focus on these skills</p>
+    </header>
+
+    <div class="container">
+        {% if skills %}
+            <ul>
+                {% for skill in skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No roadmap available yet. Complete assessment first.</p>
+        {% endif %}
+
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

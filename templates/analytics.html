@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analytics | AI Education Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Analytics Dashboard</h1>
+        <p>Track student performance and skill gaps</p>
+    </header>
+
+    <div class="container">
+
+        {% if analytics %}
+            {% for student in analytics %}
+                <div class="card">
+                    <h3>Student: {{ student.name }}</h3>
+                    <p>Assessment Score: {{ student.score }}</p>
+                    <p>Skills to Improve: {{ student.skills }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No student data available yet.</p>
+        {% endif %}
+
+        <br>
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
