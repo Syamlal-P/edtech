@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Learning Roadmap</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container result-container">
+        <h1>🗺️ Your Roadmap</h1>
+        <p class="course-name">Path for: <strong>{{ course }}</strong></p>
+
+        <div class="roadmap-box">
+            <pre>{{ roadmap }}</pre>
+        </div>
+
+        <div class="actions">
+            <a href="/" class="btn">⬅ Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
