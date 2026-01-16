@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Roadmap Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 AI Learning Roadmap</h1>
+        <p>Select a course to generate your personalized path.</p>
+
+        <form method="POST" action="/">
+            <label for="course">Choose a Course:</label>
+            <select name="course" id="course" required>
+                <option value="">-- Select a Course --</option>
+                <option value="Python Programming">Python Programming</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Cyber Security">Cyber Security</option>
+                <option value="AI Engineering">AI Engineering</option>
+            </select>
+            <button type="submit">Generate Roadmap 🚀</button>
+        </form>
+    </div>
+</body>
+</html>
