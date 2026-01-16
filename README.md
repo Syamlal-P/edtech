@@ -1,38 +1,31 @@
-🚀 AI‑Driven Personalized EdTech Platform
+**🚀 AI‑Driven Personalized EdTech Platform**
+
 Apple‑like UX · AI‑Powered Learning · Mentor‑Guided Growth
 
 A production‑ready, scalable personalized education platform focused on skill‑based learning, AI‑driven roadmap generation, and mentor‑guided growth — not static course consumption.
 
 This platform blends the best of Coursera (learning), GitHub (playlists & structure), and Apple‑style premium UI, powered by AI‑driven personalization.
 
-🌍 Vision
+**🌍 Vision**
 “To transform education from one‑size‑fits‑all courses into adaptive, skill‑focused, mentor‑guided learning journeys.”
 
-👥 Core User Roles
-🧑‍🎓 Student
-Learners seeking personalized skill development
+**👥 Core User Roles**
+🧑‍🎓1. Student
+1.1 Learners seeking personalized skill development
+1.2 AI‑driven onboarding & skill gap analysis
+1.3 Adaptive learning roadmap
+1.4 Mentor discovery & subscriptions
 
-AI‑driven onboarding & skill gap analysis
-
-Adaptive learning roadmap
-
-Mentor discovery & subscriptions
-
-👨‍🏫 Mentor / Course Provider
-Industry experts & educators
-
-Create playlists, courses & mentorship plans
-
-Track student progress & engagement
-
-Earn through subscriptions
-
-🛠️ Admin
-Platform management
-
-Analytics & reporting
-
-User, mentor & content moderation
+👨‍🏫 2. Mentor / Course Provider
+2.1 Industry experts & educators
+2.2 Create playlists, courses & mentorship plans
+2.3 Track student progress & engagement
+2.4 Earn through subscriptions
+  
+🛠️ 3.Admin
+3.1 Platform management
+3.2 Analytics & reporting
+3.3 User, mentor & content moderation
 
 🔐 Authentication & Role Management
 Secure JWT‑based authentication
