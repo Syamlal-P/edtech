@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import google.generativeai as genai
 
 app = Flask(__name__)
+app.secret_key = "super_secret_key_for_demo_only" # Change this in production!
 
 # ================================
 # ✅ GEMINI API CONFIG
@@ -10,14 +11,29 @@ app = Flask(__name__)
 GEMINI_API_KEY = "AIzaSyCGJ2nil0OnPLwWvS9y2LbDtTyrNsvzrdM" 
 genai.configure(api_key=GEMINI_API_KEY)
 
+# ================================
+# DB SIMULATION (In-memory)
+# ================================
+users = {} # username -> {password, name, email}
+
 # UPDATED: Use a current 2026 stable model
 MODEL_NAME = "gemini-2.5-flash" 
 
 # ================================
 # ROUTES
 # ================================
+from flask import redirect, url_for, session
+
 @app.route("/", methods=["GET", "POST"])
 def index():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+    
+    user = users.get(session['username'], {})
+    # Force profile completion if not set
+    if not user.get('name'):
+         return redirect(url_for('profile'))
+
     roadmap = None
     course = None
 
@@ -28,7 +44,48 @@ def index():
         return render_template("roadmap.html", course=course, roadmap=roadmap)
 
     # Initial load: show the selection form
-    return render_template("index.html")
+    return render_template("index.html", user=user)
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        
+        # Simple mock authentication (Accept any non-empty creds for demo)
+        if username and password:
+            session['username'] = username
+            if username not in users:
+                users[username] = {'password': password} # Create mock user on fly
+            return redirect(url_for('profile'))
+        else:
+            return render_template("login.html", error="Invalid credentials")
+            
+    return render_template("login.html")
+
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    if 'username' not in session:
+        return redirect(url_for('login'))
+        
+    username = session['username']
+    
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        
+        if username in users:
+            users[username]['name'] = name
+            users[username]['email'] = email
+            
+        return redirect(url_for('index'))
+        
+    return render_template("profile.html", profile=users.get(username, {}))
+
+@app.route("/logout")
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
 
 # ================================
 # GEMINI FUNCTION
