@@ -8,7 +8,7 @@ app.secret_key = "super_secret_key_for_demo_only" # Change this in production!
 # ✅ GEMINI API CONFIG
 # ================================
 # Replace with your actual API key
-GEMINI_API_KEY = "AIzaSyCGJ2nil0OnPLwWvS9y2LbDtTyrNsvzrdM" 
+GEMINI_API_KEY = "YOUR API KEY" 
 genai.configure(api_key=GEMINI_API_KEY)
 
 # ================================
@@ -110,4 +110,5 @@ def generate_course_roadmap(course):
         return f"Error: {str(e)}"
 
 if __name__ == "__main__":
+
     app.run(debug=True)
