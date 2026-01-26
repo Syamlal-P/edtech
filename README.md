@@ -33,9 +33,7 @@ Secure JWT‑based authentication
 Role‑based access control:
 
 Student
-
 Mentor
-
 Admin
 
 Email & password login/signup
