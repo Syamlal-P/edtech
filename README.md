@@ -90,7 +90,6 @@ Skill outcomes
 Difficulty level
 
 Time estimate
-
 Student selects preferred path
 
 Step 5: Personalized Roadmap Generation
