@@ -7,6 +7,8 @@ This platform blends the best of Coursera (learning), GitHub (playlists & struct
 **🌍 Vision**
 “To transform education from one‑size‑fits‑all courses into adaptive, skill‑focused, mentor‑guided learning journeys.”
 
+
+
 **👥 Core User Roles**
 🧑‍🎓1. Student
 1.1 Learners seeking personalized skill development
